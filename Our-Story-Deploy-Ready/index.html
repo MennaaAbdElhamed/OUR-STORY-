@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<title>Our Story</title>
+<meta name="theme-color" content="#dcebf5">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+  <div class="particles" id="particles"></div>
+</div>
+
+<!-- Falling petals, always running -->
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<!-- Floating music button — always visible from the moment the page loads -->
+<button class="music-btn" id="musicBtn" aria-label="Play our song">
+  <span class="music-visual">
+    <span class="music-icon" id="musicIcon">&#9835;</span>
+    <span class="music-bars" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </span>
+  </span>
+  <span class="music-label" id="musicLabel">Play Our Song</span>
+  <span class="music-ring"></span>
+</button>
+<audio id="songAudio" src="assets/music/song.mp3" preload="none" loop></audio>
+
+<!-- ===================== ENVELOPE / HERO ===================== -->
+<section class="stage" id="envelopeStage">
+  <div class="stage-inner">
+
+    <div class="envelope-scene" id="envelopeScene">
+      <div class="envelope-wrap" id="envelopeWrap" role="button" tabindex="0" aria-label="Open the envelope">
+        <div class="env-shadow"></div>
+        <div class="env-glow"></div>
+        <img class="env-base" src="assets/images/envelope.png" alt="A sealed envelope" draggable="false">
+        <div class="env-flap" style="background-image:url('assets/images/envelope.png');"></div>
+        <div class="seal-flash" id="sealFlash"></div>
+      </div>
+      <p class="tap-hint" id="tapHint">Tap the envelope</p>
+    </div>
+
+    <!-- Letter card, hidden until envelope opens -->
+    <article class="letter-card" id="letterCard" aria-hidden="true">
+      <div class="letter-inner">
+        <p class="letter-eyebrow">for you</p>
+        <h1 class="letter-title"><em>A Letter</em><br>Full of Love</h1>
+        <div class="letter-divider"><span></span><i class="letter-heart">&#10084;</i><span></span></div>
+        <p class="letter-body">
+          Some stories begin with chance, and quietly turn into forever.
+          Every glance, every quiet afternoon, every hand held a little tighter —
+          they all led here, to this exact moment, to us.
+          <br><br>
+          You are the softest place I have ever landed, and the calmest sky
+          I have ever known. What follows is a small walk through our story —
+          the moments that stitched two lives into one gentle, unfolding tale.
+          <br><br>
+          Scroll down, love. There is more waiting for you.
+        </p>
+        <p class="letter-sign">— always yours</p>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+    <span></span>
+    <p>scroll to begin our story</p>
+  </div>
+</section>
+
+<!-- ===================== TIMELINE ===================== -->
+<section class="timeline" id="timeline" aria-label="Our photo timeline">
+  <header class="timeline-head reveal">
+    <p class="timeline-eyebrow">our journey</p>
+    <h2 class="timeline-title">Every Chapter of Us</h2>
+  </header>
+
+  <div class="timeline-track" id="timelineTrack">
+    <!-- photo items injected by script.js -->
+  </div>
+</section>
+
+<!-- ===================== FINALE ===================== -->
+<section class="finale" id="finale">
+  <div class="finale-glow"></div>
+  <svg class="finale-heart" viewBox="0 0 64 58" aria-hidden="true">
+    <path d="M32 54C14 42 2 30.5 2 18.5 2 9 9.5 2 18.5 2c5.6 0 10.6 2.9 13.5 7.3C34.9 4.9 39.9 2 45.5 2 54.5 2 62 9 62 18.5 62 30.5 50 42 32 54Z"/>
+  </svg>
+  <p class="finale-eyebrow reveal">and this is only the beginning</p>
+  <h2 class="finale-title reveal">Forever Starts Here</h2>
+  <p class="finale-sub reveal">Here's to every chapter still unwritten — I can't wait to live them with you.</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
